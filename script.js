@@ -1,36 +1,75 @@
 var pw;
-var passwordLength = {};
-var type; 
-var charList;
+var passwordLength;
+var charList = [];
 var lengthCheck;
-function passWord(passwordLength,type)
+
+var pw = [];
+var specialChar = '\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~\)' ;
+var alphabetLower = 'abcdefghijklmnopqrstuvwxyz';
+var alphabetUpper = alphabetLower.toUpperCase();
+var numbers = '1234567890';
+
+// Get the inputs from the radio buttons check box with the following criteria
+    // 1. special char
+    // 2. uppercase
+    // 3. lowercase 
+    // 4. numbers
+// if none selected. alert user to select atleast one IN RED
+
+function pwGen(inputList,passwordLength)
 {
-// get the length of array
-    // if length is less than 8 
-        // go back and ask again
-    //elif length is greater than 128 
-        // go back and ask again
-    // else
-        // pass
-// for i = 0 to passwordLength
-    //pw[i] = Math.random()
-    lengthCheck = false;
-    var pw = [];
-    var specialChar = '\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~\)' ;
-    var alphabetLower = 'abcdefghijklmnopqrstuvwxyz';
-    var alphabetUpper = alphabetLower.toUpperCase();
-    var numbers = '1234567890' ;
-
     for(var i = 0; i <= passwordLength-1; i++)
-        {   // will pick random char
-            //var randSpecialChar = specialChar[Math.floor(Math.random()*specialChar.length)];
-            var randNumbers = numbers[Math.floor(Math.random()*numbers.length)];
+        {   // will pick random char from input list
+            var randChar = inputList[Math.floor(Math.random()*inputList.length)];
             //pw = [randSpecialChar + pw];
-            pw = [randNumbers + pw];
-        
+            pw = [randChar + pw];
         }
-    
     return pw.toString()
-
-
 }
+
+//------------------------------ user input prompts
+do
+    {
+        passwordLength = prompt("Please input the length of your passwored between 8-128 characters...");
+        if(passwordLength >128 || passwordLength < 8)
+            {
+                alert("Please try again...");
+            }
+    }while(passwordLength >128 || passwordLength < 8)
+
+do
+    {
+        var isSpecialchars = confirm("Would you like the password to have special characters?");
+        var isUpper = confirm("Would you like the password to contain upper-case characters?");
+        var isLower = confirm("Would you like the password to contain lower-case characters?");
+        var isNumber = confirm("Would you like the password to contain numbers");
+        if ((isSpecialchars || isUpper || isLower || isNumber) == false)
+            {
+                alert('Please select atleast one field');
+            }
+    }while((isSpecialchars || isUpper || isLower || isNumber) == false)
+
+
+
+
+
+// note switch to radio buttons on page later
+
+if(isSpecialchars == true)
+    {
+        charList = [charList+specialChar];
+    }
+if(isUpper == true)
+    {
+        charList= [charList + alphabetUpper];
+    }
+if(isLower == true)
+    {
+        charList = [charList + alphabetLower];
+    }
+if(isNumber == true)
+    {
+        charList = [charList + numbers];
+    }
+    console.log(charList);
+ 
