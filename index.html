@@ -8,24 +8,74 @@
     </head>
 
     <body class="bg-dark appleFont">
-    
+        
         <div class="container">
-            <div class= "jumbotron jumbotron-fluid text-center">
-                <div> 
-                    <h1 id="headerLine">Password Generator</h1>
-                </div>
 
-                <div class="formSheet">
-                    <div id="row"> 
-                        <div class="container"><h3 id=password> Generate a password</32></div>
+            <div class= "jumbotron jumbotron-fluid text-center">
+
+                <div class="container">
+
+                
+                    <h1 id="headerLine">Password Generator</h1>
+                    <h4 class="text-left" id="header-text"> Password Class Attributes</h4>                        
+
+                    <section class="row container buttonPanel"> 
+                        <div class="col-md-4">
+                            
+                            <div class="row"> 
+                                <input type="text" id="lengthInput" class="form-control" placeholder="Enter length (8-128 characters)")>
+                            </div>
+
+                            <div class="row">
+                                <input class="form-check-input" type="checkbox" value="" id="specialChars">
+                                <label class="form-check-label buttonAppeal" for="specialChars"> Special Characters</label>
+                            </div>
+
+                            <div class="row">
+                                <input class="form-check-input" type="checkbox" value="" id="upperChars">
+                                <label class="form-check-label buttonAppeal" for="upperChars"> Upper-case Characters</label>
+                            </div>
+
+                            <div class="row">
+                                <input class="form-check-input" type="checkbox" value="" id="lowerChars">
+                                <label class="form-check-label buttonAppeal" for="lowerChars"> Lower-case Characters</label>
+                            </div>
+
+                            <div class="row">
+                                    <input class="form-check-input" type="checkbox" value="" id="numChars">
+                                    <label class="form-check-label buttonAppeal" for="numChars">Numbers</label>
+                            </div>
+                        </div>
+                        <div class="col-md-8"></div>
+                    </section>
+
+                    <section>
+                        <h2 class="text-left" id="header-text"> Secured Password</h2>
+                    </section>
+
+                    <div class="formSheet">
+
+                        <div class="row"> 
+                            <div class="container">
+                                <h3 class="formHeading" id="password"> Generate a password</h3>                            
+                            </div>
+                        </div>
+
                     </div>
-                    
+
+                    <section class="container">
+                        <button type="button" id="generate" class="btn btn-primary btn-lg col-md-4">Generate Password</button>
+                        <button type="button" id="copy" class="btn btn-secondary btn-lg col-md-4">Copy To Clipboard</button>
+                    </section>
 
                 </div>
     
             </div>
+            
         </div>
+
+        <script src="script.js"></script>
+
     </body>
 
-    <script src="script.js"></script>
 </html>
