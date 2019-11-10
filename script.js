@@ -18,20 +18,22 @@ function pwGen(inputList,passwordLength)
 
 document.getElementById("generate").addEventListener("click",function()
     {
+        var charList=[];
         var isSpecialChars = document.getElementById("specialChars").checked;
         var isUpper = document.getElementById("upperChars").checked;
         var isLower = document.getElementById("lowerChars").checked;
         var isNumber= document.getElementById("numChars").checked;
+
         var passwordLength = document.getElementById("lengthInput").value;
         passwordLength = parseInt(passwordLength);
-        var charList=[];
-        console.log(passwordLength);
-        //check password length
-        if(passwordLength < 8 || passwordLength > 128 || typeof !(passwordLength == Number)){
-            alert("Please enter a valid password length!");
 
-        }
-
+        
+        // check password length
+        if(passwordLength < 8 || passwordLength > 128)
+            {
+                alert("Please enter a valid password length!");
+            }
+        //  check for selected checkboxes, if none selected prompt user.
         else if(isSpecialChars == false && isUpper == false && isLower == false && isNumber == false)
             {
                 alert("Please select atleast ONE password attribute!");
@@ -65,4 +67,11 @@ document.getElementById("generate").addEventListener("click",function()
 
 
 
- 
+ document.getElementById("copy").addEventListener("click",function()
+    {
+        var password = document.querySelector("#password").innerText;
+        password.select;
+        password.focus;
+        document.execCommand("copy");
+    
+    });
