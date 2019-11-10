@@ -1,8 +1,5 @@
-var pw;
 var passwordLength;
 var charList = [];
-var lengthCheck;
-
 var pw = [];
 var specialChar = '\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~\)' ;
 var alphabetLower = 'abcdefghijklmnopqrstuvwxyz';
@@ -49,27 +46,25 @@ do
             }
     }while((isSpecialchars || isUpper || isLower || isNumber) == false)
 
-
-
-
-
 // note switch to radio buttons on page later
 
 if(isSpecialchars == true)
     {
-        charList = [charList+specialChar];
+        charList = charList+specialChar;
     }
 if(isUpper == true)
     {
-        charList= [charList + alphabetUpper];
+        charList= charList + alphabetUpper;
     }
 if(isLower == true)
     {
-        charList = [charList + alphabetLower];
+        charList = charList + alphabetLower;
     }
 if(isNumber == true)
     {
-        charList = [charList + numbers];
+        charList = charList + numbers;
     }
-    console.log(charList);
+document.querySelector("#password").innerHTML = pwGen(charList,passwordLength);
+
+
  
