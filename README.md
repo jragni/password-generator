@@ -7,4 +7,6 @@ This webpage will generate a password with the selected password characteristics
 4. Numbers 
 ## How to use.
 
-First, enter the number of characters desired (8-128). Then, select the password characteristics by clicking on the checkboxes. Finally, hit generate and copy to clipboard.  
+1. Enter the number of characters desired (8-128). 
+2. Select the password characteristics by clicking on the checkboxes. 
+3. hit generate and copy to clipboard.  
