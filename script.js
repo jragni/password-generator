@@ -58,8 +58,10 @@ document.getElementById("generate").addEventListener("click",function()
                         charList = charList + numbers;
                     }
 
+                document.querySelector("#password").value = pwGen(charList,passwordLength);
                 document.querySelector("#password").innerHTML = pwGen(charList,passwordLength);
-                
+                document.querySelector("#password").innertText = pwGen(charList,passwordLength);
+
             }
 
     });
@@ -67,11 +69,10 @@ document.getElementById("generate").addEventListener("click",function()
 
 
 
- document.getElementById("copy").addEventListener("click",function()
+ document.getElementById("copy").onclick = function()
     {
-        var password = document.querySelector("#password").innerText;
-        password.select;
-        password.focus;
+        var copyPW=document.getElementById("password");
+        copyPW.select();
         document.execCommand("copy");
-    
-    });
+        alert("Password has been copied to clipboard!")
+    }
